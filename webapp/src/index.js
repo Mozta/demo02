@@ -8,30 +8,53 @@ const sesion = true;
 const apellido = "";
 
 const alumnos = ["Andrea", "Aldo", "Abraham"];
-// fragments
-const jsx = (
-  <>
-    {sesion === false ? (
-      <>
-        <h1 className="titulo" style={{ color: "red" }}>
-          Hola {name}
-        </h1>
-        {apellido && <p>Tu apellido es: {apellido}</p>}
 
-        <h3>Lista de alumnos</h3>
-        <ul>
-          {alumnos.map((nombre,i) => {
-            return <li key={i}>{nombre}</li>;
-          })}
-        </ul>
+const Alumno = () => {
+  return (
+    <>
+      <h1 className="titulo" style={{ color: "red" }}>
+        Hola {name}
+      </h1>
+      {apellido && <p>Tu apellido es: {apellido}</p>}
+
+      <h3>Lista de alumnos</h3>
+      <ul>
+        {alumnos.map((nombre, i) => {
+          return <li key={i}>{nombre}</li>;
+        })}
+      </ul>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <>
+      {sesion === true ? (
+        <>
+          <Alumno />
+        </>
+      ) : (
+        <h2>No has iniciado sesión</h2>
+      )}
+    </>
+  );
+};
+
+// fragments
+/* const jsx = (
+  <>
+    {sesion === true ? (
+      <>
+        <Alumno />
       </>
     ) : (
       <h2>No has iniciado sesión</h2>
     )}
   </>
-);
+); */
 
-root.render(jsx);
+root.render(<App/>);
 
 /* const compruebaSesion = (sesion) => {
   if (sesion === true){
