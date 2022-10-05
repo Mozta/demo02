@@ -6,8 +6,8 @@ const Alumno = () => {
   const alumnos = ["Andrea", "Aldo", "Abraham"];
   return (
     <>
-      <TituloRojo />
-      <TituloVerde />
+      <TituloRojo usuario="Rafa" />
+      <TituloVerde usuario="Yaz"/>
 
       <h3>Lista de alumnos</h3>
       <ul>
