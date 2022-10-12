@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import Alumno from "./componentes/Usuario";
+import Alumno from "./componentes/Alumno";
+import FormularioLogin from "./componentes/FormularioLogin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +21,8 @@ const App = () => {
       ) : (
         <>
           <h2>No has iniciado sesión</h2>
-          <button onClick={() => cambiarSesion(true)}>Cerrar sesion</button>
+          <FormularioLogin/>
+          {/* <button onClick={() => cambiarSesion(true)}>Cerrar sesion</button> */}
         </>
       )}
     </>
