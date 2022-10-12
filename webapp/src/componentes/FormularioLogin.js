@@ -16,9 +16,18 @@ const FormularioLogin = () => {
       setPassword(e.target.value);
     }
   }; */
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // alert("Enviando sus datos");
+    if (user === "Rafa" && password === "123") {
+      alert("Datos correctos");
+    } else {
+      alert("Datos incorrectos");
+    }
+  };
 
   return (
-    <form action="">
+    <form action="" onSubmit={onSubmit}>
       <p>Usuario: {user}</p>
       <p>Contraseña: {password}</p>
       <div>
